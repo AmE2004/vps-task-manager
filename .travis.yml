@@ -1,0 +1,16 @@
+language: java
+jdk:
+  - openjdk17
+
+before_install:
+  - mvn -N io.takari:maven:wrapper
+
+install:
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true
+
+script:
+  - mvn test
+
+cache:
+  directories:
+    - ~/.m2
