@@ -2,8 +2,10 @@ language: java
 jdk:
   - openjdk17
 
-before_install:
-  - mvn -N io.takari:maven:wrapper
+branches:
+  only:
+    - main
+    - develop
 
 install:
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true
